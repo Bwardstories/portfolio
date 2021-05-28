@@ -6,15 +6,15 @@ import logo from "../../assets/icons/favicon.png";
 const Header = () => {
   return (
     <Navbar variant="dark" className="headerNavbar">
-      <Navbar.Brand href="/#intro" className="logoLink">
+      <Navbar.Brand href="/portfolio/#intro" className="logoLink">
         <img src={logo} alt="" className="logoIcon" />
         <span className="logoName"> BRIAN WARD</span>
       </Navbar.Brand>
       <div className="headerLinks">
         <Nav>
-          <Nav.Link href="/#aboutMe">About Me</Nav.Link>
-          <Nav.Link href="/#projectSection">Projects</Nav.Link>
-          <Nav.Link href="/resume">Resume</Nav.Link>
+          <Nav.Link href="/portfolio/#aboutMe">About Me</Nav.Link>
+          <Nav.Link href="/portfolio/#projectSection">Projects</Nav.Link>
+          <Nav.Link href="/portfolio/resume">Resume</Nav.Link>
         </Nav>
       </div>
     </Navbar>

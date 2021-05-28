@@ -6,8 +6,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./components/header/Header.css";
 
 ReactDOM.render(
-  <BrowserRouter basename="/portfolio">
-    <App />
-  </BrowserRouter>,
+  <React.StrictMode>
+    <BrowserRouter basename="/portfolio">
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>,
   document.getElementById("root")
 );

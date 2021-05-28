@@ -1,0 +1,54 @@
+.projectContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20%;
+}
+
+.projectImage {
+  width: 600px;
+}
+
+.projectImageContainer {
+  padding-top: 10%;
+}
+
+.projectInfoContainer {
+  width: 50%;
+  text-align: center;
+  position: relative;
+}
+
+.projectTitle {
+  color: var(--color4);
+  font-size: 3.5rem;
+}
+
+.infoContainer {
+  position: absolute;
+  top: 40%;
+  left: -15%;
+}
+
+.descriptionContainer {
+  background: var(--color2);
+  border-radius: 2%;
+  box-shadow: 15px 15px 10px var(--color1);
+  color: white;
+  padding: 5%;
+  z-index: 2;
+}
+
+.skillList {
+  position: absolute;
+  top: 115%;
+  right: 0%;
+  color: var(--color4);
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  z-index: 5;
+}
+
+.skillList li {
+  padding: 4%;
+}

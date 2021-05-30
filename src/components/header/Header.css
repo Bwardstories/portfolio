@@ -40,3 +40,47 @@
   justify-content: flex-end;
   align-items: center;
 }
+
+.resumeLink {
+  text-decoration: none;
+}
+
+/* button {
+  border: none;
+  text-decoration: none;
+  background: transparent;
+  color: var(--color4);
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+  background: transparent;
+}
+
+button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+button:active {
+  transform: scale(0.99);
+} */
+
+button {
+  background: transparent;
+  border: none;
+  color: var(--color4);
+}
+
+button:hover {
+  color: rgb(170, 169, 169);
+}
+
+button:focus {
+  color: rgb(250, 250, 250);
+}

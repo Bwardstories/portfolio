@@ -10,10 +10,10 @@ export default function AboutMe() {
     setOffsetY(prevValue => (prevValue = window.pageYOffset));
   };
   const toggleVisible = () => {
-    if (offsetY > 190) {
+    if (offsetY > 220) {
       setIsVisible(prevValue => (prevValue = true));
     }
-    if (offsetY <= 190) {
+    if (offsetY <= 220) {
       setIsVisible(false);
     }
   };

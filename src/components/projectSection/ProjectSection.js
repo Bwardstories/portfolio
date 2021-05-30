@@ -6,6 +6,7 @@ import classnames from "classnames";
 import "./ProjectSection.css";
 const projectList = [
   {
+    "id": 1,
     "title": "Moodify",
     "skills": ["React", "MongoDB", "Express", "Node.js", "Bootstrap"],
     "miniDesc": "App for creating and sharing song lists for different moods",
@@ -15,6 +16,7 @@ const projectList = [
     "image": moodifyImage,
   },
   {
+    "id": 2,
     "title": "Pokemon Search Engine",
     "skills": ["Javascript", "CSS", "HTML", "API"],
     "minDesc": "Pokemon search engine",
@@ -54,7 +56,7 @@ export default function ProjectSection() {
       })}>
       <h1 className="projectSectionHeader">Notable Projects</h1>
       {projectList.map((project, index) => (
-        <Project project={project} key={index} id={`project${index}`} />
+        <Project project={project} key={index} id={project.id} />
       ))}
     </div>
   );

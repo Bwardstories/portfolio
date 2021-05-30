@@ -9,7 +9,19 @@
 }
 
 .projectImageContainer {
-  padding-top: 10%;
+  width: 600px;
+  height: 340px;
+  background-size: cover;
+  margin-top: 10%;
+  background-color: var(--color4alt);
+  background-blend-mode: color-burn;
+  transition: all 0.5s ease-in-out;
+}
+
+.projectImageContainer:hover {
+  background-blend-mode: normal;
+  transform: scale(1.1);
+  transition: all 0.5s ease-in-out;
 }
 
 .projectInfoContainer {
@@ -38,17 +50,27 @@
   z-index: 2;
 }
 
-.skillList {
-  position: absolute;
+.evenSkillList {
   top: 115%;
   right: 0%;
   color: var(--color4);
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   list-style: none;
   z-index: 5;
 }
 
-.skillList li {
+.skillList {
+  top: 115%;
+  right: 0%;
+  color: var(--color4);
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  z-index: 5;
+}
+
+.skillList li,
+.evenSkillList li {
   padding: 4%;
 }

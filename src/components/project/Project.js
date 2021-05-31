@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Project.css";
+import classnames from "classnames";
 
 export default function Project(props) {
   const { project, id } = props;
-  console.log(project, id);
+  const [currentProjectLocation, setCurrentProjectLocation] = useState();
+  const [onScreen, setOnScreen] = useState(false);
+
+  const getElementLocation = () => {
+    const currentProject = document.getElementById(`${id}`);
+    if (currentProject) {
+      let currentLocation = currentProject.getBoundingClientRect().y;
+      setCurrentProjectLocation(currentLocation);
+      return currentLocation;
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", getElementLocation);
+    return () => window.removeEventListener("scroll", getElementLocation);
+  }, [currentProjectLocation]);
+  console.log(currentProjectLocation, `from project ${id}`);
   return id % 2 == 0 ? (
     <div
       id={id}
@@ -15,7 +32,11 @@ export default function Project(props) {
       </a>
       <div className="projectInfoContainer">
         <h2 className="projectTitle">{project.title}</h2>
-        <div className="infoContainer">
+        <div
+          className={classnames("infoContainer", {
+            "leftStart": currentProjectLocation >= 500,
+            "leftEnd": currentProjectLocation < 500,
+          })}>
           <div className="descriptionContainer">{project.description}</div>
           <ul className="evenSkillList">
             {project.skills.map((skill, index) => (
@@ -31,7 +52,11 @@ export default function Project(props) {
       className={id % 2 == 0 ? "projectContainer" : "projectContainer"}>
       <div className="projectInfoContainer">
         <h2 className="projectTitle">{project.title}</h2>
-        <div className="infoContainer">
+        <div
+          className={classnames("infoContainer", {
+            "rightStart": currentProjectLocation >= 500,
+            "rightEnd": currentProjectLocation < 500,
+          })}>
           <div className="descriptionContainer">{project.description}</div>
           <ul className="skillList">
             {project.skills.map((skill, index) => (

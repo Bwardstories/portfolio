@@ -22,6 +22,7 @@
   background-blend-mode: normal;
   transform: scale(1.1);
   transition: all 0.5s ease-in-out;
+  z-index: 0;
 }
 
 .projectInfoContainer {
@@ -39,6 +40,8 @@
   position: absolute;
   top: 40%;
   left: -15%;
+  width: 120%;
+  z-index: 1;
 }
 
 .descriptionContainer {
@@ -73,4 +76,28 @@
 .skillList li,
 .evenSkillList li {
   padding: 4%;
+}
+
+.leftStart {
+  position: absolute;
+  left: 400%;
+  transition: all ease-in-out 0.75s;
+}
+
+.leftEnd {
+  position: absolute;
+  left: -15%;
+  transition: all ease-in-out 0.75s;
+}
+
+.rightStart {
+  position: absolute;
+  left: -200%;
+  transition: all ease-in-out 0.75s;
+}
+
+.rightEnd {
+  position: absolute;
+  left: -15%;
+  transition: all ease-in-out 0.75s;
 }

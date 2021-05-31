@@ -6,6 +6,7 @@ import profilePic from "../../assets/images/Profile.jpg";
 export default function AboutMe() {
   const [isVisible, setIsVisible] = useState(false);
   const [offsetY, setOffsetY] = useState(0);
+  const [aboutMeLocation, setAboutMeLocation] = useState();
   const handleScroll = () => {
     setOffsetY(prevValue => (prevValue = window.pageYOffset));
   };
@@ -23,6 +24,21 @@ export default function AboutMe() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [toggleVisible]);
 
+  const getElementLocation = () => {
+    const aboutMe = document.getElementById("aboutMe");
+    if (aboutMe) {
+      let currentLocation = aboutMe.getBoundingClientRect().y;
+      setAboutMeLocation(currentLocation);
+      return aboutMeLocation;
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", getElementLocation);
+    return () => window.removeEventListener("scroll", getElementLocation);
+  }, [aboutMeLocation]);
+
+  console.log(aboutMeLocation);
   return (
     <div
       id="aboutMe"

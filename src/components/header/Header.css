@@ -45,32 +45,6 @@
   text-decoration: none;
 }
 
-/* button {
-  border: none;
-  text-decoration: none;
-  background: transparent;
-  color: var(--color4);
-  cursor: pointer;
-  text-align: center;
-  transition: background 250ms ease-in-out, transform 150ms ease;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-button:hover,
-button:focus {
-  background: transparent;
-}
-
-button:focus {
-  outline: 1px solid #fff;
-  outline-offset: -4px;
-}
-
-button:active {
-  transform: scale(0.99);
-} */
-
 button {
   background: transparent;
   border: none;
@@ -83,4 +57,16 @@ button:hover {
 
 button:focus {
   color: rgb(250, 250, 250);
+}
+
+@media (max-width: 1440px) {
+  .logoName {
+    font-size: 1.2rem;
+  }
+  .navbar-nav {
+    font-size: 1.2rem;
+  }
+  .headerLinks {
+    padding-right: 0;
+  }
 }

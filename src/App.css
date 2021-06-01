@@ -24,3 +24,43 @@
   --color5: #1e2c25;
   --color4alt: rgba(100, 252, 242, 0.5);
 }
+
+@media (max-width: 1440px) {
+  #root {
+    background-color: black;
+  }
+  .myName,
+  .textContainer h1,
+  .projectSectionHeader {
+    font-size: 3.5rem;
+  }
+  .projectTitle {
+    font-size: 3rem;
+  }
+  .briefIntro {
+    font-size: 2.5rem;
+  }
+  .introText,
+  .aboutMeMainText,
+  .skillsList,
+  .descriptionContainer {
+    font-size: 0.8rem;
+  }
+  .logoName {
+    font-size: 1rem;
+  }
+  .descriptionContainer {
+    width: 130%;
+  }
+  .rightEnd {
+    left: -50%;
+  }
+  .skillList li,
+  .evenSkillList li {
+    font-size: 0.8rem;
+  }
+  .projectImageContainer {
+    width: 500px;
+    height: 295px;
+  }
+}

@@ -34,10 +34,10 @@ export default function ProjectSection() {
     setOffsetY(prevValue => (prevValue = window.pageYOffset));
   };
   const toggleVisible = () => {
-    if (offsetY > 900) {
+    if (offsetY > 800) {
       setIsVisible(prevValue => (prevValue = true));
     }
-    if (offsetY <= 900) {
+    if (offsetY <= 800) {
       setIsVisible(false);
     }
   };

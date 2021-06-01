@@ -54,8 +54,8 @@ export default function Project(props) {
         <h2 className="projectTitle">{project.title}</h2>
         <div
           className={classnames("infoContainer", {
-            "rightStart": currentProjectLocation >= 500,
-            "rightEnd": currentProjectLocation < 500,
+            "rightStart": currentProjectLocation >= 300,
+            "rightEnd": currentProjectLocation < 300,
           })}>
           <div className="descriptionContainer">{project.description}</div>
           <ul className="skillList">

@@ -3,6 +3,8 @@
   margin: 0;
   background-color: var(--color5);
   height: 100vh;
+  width: 100%;
+  /* overflow-x: hidden; */
 }
 
 .mainAppContainer {
@@ -12,7 +14,7 @@
   background-repeat: no-repeat;
   position: static;
   background-attachment: fixed;
-  /* overflow-y: scroll; */
+  overflow-x: hidden;
   z-index: 3;
 }
 

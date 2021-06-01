@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import logo from "../../assets/icons/favicon.png";
+import githubLogo from "../../assets/icons/github.png";
 
 const Header = () => {
   let history = useHistory();

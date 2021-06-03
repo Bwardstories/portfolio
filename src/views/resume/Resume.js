@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Viewer } from "@react-pdf-viewer/core";
-import pdfFile from "../../assets/resume/resume_.pdf";
+import pdfFile from "../../assets/resume/Resume.pdf";
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 import { Worker } from "@react-pdf-viewer/core";
 import "@react-pdf-viewer/core/lib/styles/index.css";

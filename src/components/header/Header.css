@@ -12,10 +12,7 @@
 
 .navbar-brand {
   color: var(--color4);
-}
-
-.nav-link {
-  color: var(--color4);
+  width: 40%;
 }
 
 .logoIcon {

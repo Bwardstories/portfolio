@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   padding-top: 20%;
+  margin-top: 15%;
   margin-bottom: 12%;
   width: 100%;
   z-index: 2;
@@ -14,7 +15,7 @@
 
 .textContainer h1 {
   color: var(--color4);
-  font-size: 4rem;
+  font-size: clamp(2rem, 4vw, 8rem);
 }
 
 .aboutMeMainText {
@@ -40,15 +41,4 @@ ul.skillsList li::before {
   color: var(--color4);
   font-size: 1rem;
   line-height: 25px;
-}
-
-.fadeOut {
-  opacity: 0;
-  /* width: 0;
-  height: 0; */
-  /* transition: width 0.25s 0.25s, height 0.25s 0.25s, opacity 0.25s; */
-}
-
-.fadeIn {
-  opacity: 1;
 }

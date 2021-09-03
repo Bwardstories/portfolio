@@ -7,7 +7,7 @@ export default function Introduction() {
       <span className="introPreName">Hello, my name is</span>
       <h1 className="myName">Brian Ward</h1>
       <h1 className="briefIntro">
-        I am a certified front-end software developer
+        I am a certified front-end software engineer
       </h1>
       <div className="introText">
         If you're looking for a highly motivated, fast learning team player who

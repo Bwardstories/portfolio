@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Project from "../project/Project";
 import pokemonImage from "../../assets/images/pokemon.png";
 import moodifyImage from "../../assets/images/moodify.png";
-import classnames from "classnames";
 import "./ProjectSection.css";
 
 // project list to pass down through props to render project sections dynamically

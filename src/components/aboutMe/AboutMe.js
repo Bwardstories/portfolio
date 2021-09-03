@@ -1,58 +1,17 @@
-import React, { useEffect, useState } from "react";
-import classnames from "classnames";
+import React from "react";
 import "./AboutMe.css";
 import profilePic from "../../assets/images/Profile.jpg";
 
 export default function AboutMe() {
-  const [isVisible, setIsVisible] = useState(false);
-  const [offsetY, setOffsetY] = useState(0);
-  const [aboutMeLocation, setAboutMeLocation] = useState();
-  const handleScroll = () => {
-    setOffsetY(prevValue => (prevValue = window.pageYOffset));
-  };
-  const toggleVisible = () => {
-    if (offsetY > 220) {
-      setIsVisible(prevValue => (prevValue = true));
-    }
-    if (offsetY <= 220) {
-      setIsVisible(false);
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    toggleVisible();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [toggleVisible]);
-
-  const getElementLocation = () => {
-    const aboutMe = document.getElementById("aboutMe");
-    if (aboutMe) {
-      let currentLocation = aboutMe.getBoundingClientRect().y;
-      setAboutMeLocation(currentLocation);
-      return aboutMeLocation;
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", getElementLocation);
-    return () => window.removeEventListener("scroll", getElementLocation);
-  }, [aboutMeLocation]);
-
-  console.log(aboutMeLocation);
   return (
-    <div
-      id="aboutMe"
-      className={classnames("aboutMeContainer", {
-        "fadeIn": isVisible,
-        "fadeOut": !isVisible,
-      })}>
+    <div id="aboutMe" className="aboutMeContainer">
       <div className="imageContainer">
         <img src={profilePic} alt="" className="profilePic" />
       </div>
       <div className="textContainer">
-        <h1>About Me</h1>
+        <h1 className="aboutMe">About Me</h1>
         <p className="aboutMeMainText">
-          Hey! My name is Brian Ward, I am a father of 8, and I come from a
+          Hey! My name is Brian Ward, I am a father of 4, and I come from a
           small town near Charleston, SC. I have been in the workforce for
           nearly 20 years, and when Covid hit I decided a change was necessary.
           Fast forward a little and I am so happy I made this decision. I have

@@ -1,43 +1,36 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./Project.css";
-import classnames from "classnames";
+import { useMediaQuery } from "react-responsive";
+
+//  this component renders each project section dynamically, passed down through props from the ProjectSection component
 
 export default function Project(props) {
   const { project, id } = props;
-  const [currentProjectLocation, setCurrentProjectLocation] = useState();
-  const [onScreen, setOnScreen] = useState(false);
 
-  const getElementLocation = () => {
-    const currentProject = document.getElementById(`${id}`);
-    if (currentProject) {
-      let currentLocation = currentProject.getBoundingClientRect().y;
-      setCurrentProjectLocation(currentLocation);
-      return currentLocation;
-    }
-  };
+  const isDesktop = useMediaQuery({ query: "(min-width: 1400px)" });
 
-  useEffect(() => {
-    window.addEventListener("scroll", getElementLocation);
-    return () => window.removeEventListener("scroll", getElementLocation);
-  }, [currentProjectLocation]);
-  console.log(currentProjectLocation, `from project ${id}`);
-  return id % 2 == 0 ? (
+  const isMobileDevice = useMediaQuery({ query: "(max-width: 780px)" });
+  //   switch out rendering dynamically for each project so the layout reverses every other one
+  return id % !2 === 0 ? (
     <div
       id={id}
-      className={id % 2 == 0 ? "projectContainer" : "projectContainer"}>
+      className={
+        isDesktop ? "projectContainer" : "projectContainer flex-md-column"
+      }>
       <a href={project.url}>
         <div
           className="projectImageContainer"
           style={{ backgroundImage: `url(${project.image})` }}></div>
       </a>
       <div className="projectInfoContainer">
-        <h2 className="projectTitle">{project.title}</h2>
-        <div
-          className={classnames("infoContainer", {
-            "leftStart": currentProjectLocation >= 500,
-            "leftEnd": currentProjectLocation < 500,
-          })}>
-          <div className="descriptionContainer">{project.description}</div>
+        <div className="infoContainer">
+          <div className="descriptionContainer">
+            <h2 className="projectTitle">{project.title}</h2>
+            {project.description}
+            <br></br>
+            Click <a href={project.github}>Here </a>
+            for the github repository
+          </div>
           <ul className="evenSkillList">
             {project.skills.map((skill, index) => (
               <li key={index}>{skill}</li>
@@ -47,17 +40,29 @@ export default function Project(props) {
       </div>
     </div>
   ) : (
-    <div
-      id={id}
-      className={id % 2 == 0 ? "projectContainer" : "projectContainer"}>
+    <div id={id} className={"projectContainer"}>
       <div className="projectInfoContainer">
-        <h2 className="projectTitle">{project.title}</h2>
-        <div
-          className={classnames("infoContainer", {
-            "rightStart": currentProjectLocation >= 300,
-            "rightEnd": currentProjectLocation < 300,
-          })}>
-          <div className="descriptionContainer">{project.description}</div>
+        <div className="infoContainer">
+          <div className="descriptionContainer">
+            <h2 className="projectTitle">{project.title}</h2>
+            {project.description}
+            <br></br>
+            {/* checks if the project is a full stack app or not, and then renders the github links accordingly */}
+            {project.fullStack === true ? (
+              <>
+                {/* links to github projects passed down through props */}
+                Click <a href={project.github}>Here </a>
+                for the Client repository And
+                <a href={project.githubBackend}>Here</a>
+                for the server repository
+              </>
+            ) : (
+              <>
+                Click <a href={project.github}>Here </a>
+                for the github repository
+              </>
+            )}
+          </div>
           <ul className="skillList">
             {project.skills.map((skill, index) => (
               <li key={index}>{skill}</li>

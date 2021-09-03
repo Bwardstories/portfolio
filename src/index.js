@@ -7,7 +7,7 @@ import "./components/header/Header.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter basename={"/portfolio"}>
+    <BrowserRouter basename="/portfolio">
       <App />
     </BrowserRouter>
   </React.StrictMode>,

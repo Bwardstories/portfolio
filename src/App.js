@@ -13,7 +13,7 @@ function App() {
       <SocialLinks />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/resume" component={Resume} />
+        <Route path="/resume" component={Resume} />
       </Switch>
     </div>
   );

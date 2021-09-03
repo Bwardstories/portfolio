@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Project from "../project/Project";
 import pokemonImage from "../../assets/images/pokemon.png";
 import moodifyImage from "../../assets/images/moodify.png";
@@ -36,41 +36,8 @@ const projectList = [
 ];
 
 export default function ProjectSection() {
-  // set state to control fading in animations
-  const [isVisible, setIsVisible] = useState(true);
-  // set state for keeping track of element positions in relation to the viewport
-  const [offsetY, setOffsetY] = useState(0);
-  //  function to keep track of screen position and update the state accordingly
-  const handleScroll = () => {
-    setOffsetY(prevValue => (prevValue = window.pageYOffset));
-  };
-
-  //  function that triggers the fade in/ fade out effects
-  const toggleVisible = () => {
-    if (offsetY > 800) {
-      setIsVisible(prevValue => (prevValue = true));
-    }
-    if (offsetY <= 800) {
-      setIsVisible(false);
-    }
-  };
-
-  // useEffect that adds listener to call the handleScroll function on scroll and the toggleVisible function
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  //   toggleVisible();
-  //   //  remove the eventListener when component is unmounted
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // });
-
   return (
-    <div
-      id="projectSection"
-      // uses classnames dependency to assign multiple classnames to element
-      className={classnames("projectSectionContainer", {
-        "fadeIn": isVisible,
-        "fadeOut": !isVisible,
-      })}>
+    <div id="projectSection" className={"projectSectionContainer"}>
       <h1 className="projectSectionHeader">Notable Projects</h1>
       {/* maps through the ProjectList and renders each Project component, and passes down the data for each project through props */}
       {projectList.map((project, index) => (

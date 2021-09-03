@@ -9,7 +9,6 @@ export default function Project(props) {
 
   const isDesktop = useMediaQuery({ query: "(min-width: 1400px)" });
 
-  const isMobileDevice = useMediaQuery({ query: "(max-width: 780px)" });
   //   switch out rendering dynamically for each project so the layout reverses every other one
   return id % !2 === 0 ? (
     <div

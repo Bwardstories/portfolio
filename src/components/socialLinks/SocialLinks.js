@@ -1,5 +1,5 @@
 import React from "react";
-import "./SocialLinks.css";
+import "./SocialLinks.scss";
 import githubLogo from "../../assets/icons/github.svg";
 import linkedInLogo from "../../assets/icons/linkedin.svg";
 

@@ -2,7 +2,7 @@ import React from "react";
 import Project from "../project/Project";
 import pokemonImage from "../../assets/images/pokemon.png";
 import moodifyImage from "../../assets/images/moodify.png";
-import "./ProjectSection.css";
+import "./ProjectSection.scss";
 
 // project list to pass down through props to render project sections dynamically
 const projectList = [

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Project.css";
+import "./Project.scss";
 import { useMediaQuery } from "react-responsive";
 
 //  this component renders each project section dynamically, passed down through props from the ProjectSection component
